@@ -73,11 +73,11 @@ describe('Blogposts API resource', function() {
             .then(_res => {
                 res = _res;
                 expect(res).to.have.status(200);
-                expect(res.body.posts).to.have.lengthOf.at.least(1);
+                expect(res.body.blogposts).to.have.lengthOf.at.least(1);
                 return BlogPost.count();
             })
             .then(count => {
-                expect(res.body.posts).to.have.lengthOf(count);
+                expect(res.body.blogposts).to.have.lengthOf(count);
             });
         });
     
@@ -88,8 +88,8 @@ describe('Blogposts API resource', function() {
             .then(res => {
                 expect(res).to.have.status(200);
                 expect(res).to.be.json;
-                expect(res.body.posts).to.be.a('array');
-                expect(res.body.posts).to.have.lengthOf.at.least(1);
+                expect(res.body.blogposts).to.be.a('array');
+                expect(res.body.blogposts).to.have.lengthOf.at.least(1);
 
                 res.body.posts.forEach(blogpost => {
                     expect(blogpost).to.be.a('object');
@@ -97,7 +97,7 @@ describe('Blogposts API resource', function() {
                         'id', 'author', 'title', 'content', 'created'
                     );
                 });
-                resBlogPost = res.body.posts[0];
+                resBlogPost = res.body.blogposts[0];
                 return BlogPost.findById(resBlogPost.id);
             })
             .then(blogpost => {
