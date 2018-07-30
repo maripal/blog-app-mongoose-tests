@@ -2,3 +2,10 @@ language: node_js
 node_js: node
 services:
 - mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: tdaHQ6/4Am4qML73LNocyfDtYIgDtrvCL7+PyyBHZI5So02zyC5rVXB6oNtCOKgIsA33StfXD7aw+dOr9adYxUTK4q+rNG+DENHEJQKbEldoYtnXQofgsE04e62156TQmzp1MFWbZpzK1C/lUxVuvcO9CnGruyZ8UMTmgMLeDSM/1zlIuvJdL/V2kHJ++114UHTvLdcG716mbt9AD+QAk37MTDwBI+xQqik+/ba7bx4cUitMIimqRYtW106us+MxQqfaHPOJnTyP2qH0W6nQptYs86UAIsRnTsMDGG+t+YLZCUoOkQEHgi9aJ+UgWyy6FQQgjY7e8cUMqm7e8OY6DuCThEPhYM1r5/3i4DVEM42EMtUsoUUa2lUmzU3MvVySWMb9mwVR7JWPsDNpz68trVs5QhukV3hCQ4XpaXzQ5ansVrY5HMB3BwM3nUrTuzJJuZKuETAQ5qfy3whlyQ7yq8Dg9jV5LJPmEKgt9WGdCftrKpxaEFbRowQGfE6/UPxf+Z05m78HZY5O+OjQZA4VgRJWS3/TFWm4dEQ/oQLNZqlZmMcseJ8PZkNOCWfoWQJb37ZGjFkwk4iJU+EgJLSdgKl5TpaqMw/kYjBoDZOwdsvAHLC11RAzWDn3hXIyMalJ1BNNGJMxTJsLLeto9hktXsbjp+91T7/PtvDtT4NNV7g=
+  app: stark-earth-78507
+  on:
+    repo: maripal/blog-app-mongoose-tests
