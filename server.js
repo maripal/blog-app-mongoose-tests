@@ -17,7 +17,7 @@ app.get('/posts', (req, res) => {
   BlogPost
     .find()
     .then(posts => {
-      res.json(posts.map(post => post.serialize()));
+      res.json({blogposts : posts.map(post => post.serialize())});
     })
     .catch(err => {
       console.error(err);
@@ -28,7 +28,7 @@ app.get('/posts', (req, res) => {
 app.get('/posts/:id', (req, res) => {
   BlogPost
     .findById(req.params.id)
-    .then(post => res.json(post.serialize()))
+    .then(post => res.json({blogposts: post.serialize()}))
     .catch(err => {
       console.error(err);
       res.status(500).json({ error: 'something went horribly awry' });
